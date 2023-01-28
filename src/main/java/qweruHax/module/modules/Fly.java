@@ -6,7 +6,7 @@ import org.lwjgl.glfw.GLFW;
 public class Fly extends ModuleBase {
 
     public Fly() {
-        super("Fly", GLFW.GLFW_KEY_C, Category.UTIL);
+        super("AntiFloatKick", GLFW.GLFW_KEY_C, Category.UTIL);
     }
 
     public int tickCounter = 0;

@@ -5,19 +5,6 @@ import qweruHax.module.VelocityModuleBase;
 
 public class PlayerEntityVelocityMultiplier extends VelocityModuleBase {
     public PlayerEntityVelocityMultiplier() {
-        super("PEVelMod=5");
+        super("VelocityMultiplier");
     }
-
-
-
-
-    public static boolean pubIsToggled() {
-        return toggled;
-    }
-
-    public static boolean pubToggle = pubIsToggled();
-
-    private final PlayerEntity player = mc.player;
-
-
 }
