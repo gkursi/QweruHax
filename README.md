@@ -1,6 +1,10 @@
 # QweruHax
 
+<<<<<<< HEAD
 A simple Fabric 1.19.2 hack client.
+=======
+A simple 1.19.2 Fabric hack client.
+>>>>>>> ae3f6cec849f1acec9c894bf29eb0a6a0a290772
 
 **Some modules:**
 AntiFlightKick - prevents you from getting kicked for flying
