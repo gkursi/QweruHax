@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "qweruHax.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ClientConnectionMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "EntityMixin",
+    "KeyboardMixin",
+    "MinecraftClientMixin",
+    "MixinInGameHud",
+    "PlayerEntityMixin",
+    "PlayerMoveC2SPacketAccessor",
+    "VehicleMoveC2SPacketAccessor"
+  ],
+  "client": [
+    "BlockRenderManagerMixin",
+    "PauseMenuClassMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

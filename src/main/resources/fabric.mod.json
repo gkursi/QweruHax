@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "qweruhax",
+  "version": "${version}",
+  "name": "qweruHax",
+  "description": "A hack for LO's server",
+  "authors": [
+    "Qweru"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/qweruHax/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "qweruHax.Client"
+    ]
+  },
+  "mixins": [
+    "qweruHax.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.10",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
