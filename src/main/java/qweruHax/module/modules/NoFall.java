@@ -13,10 +13,11 @@ public class NoFall extends ModuleBase {
     }
 
     @Override
-    public void onPacket2S(Packet p) {
+    public boolean onPacket2S(Packet p) {
         if(p instanceof PlayerMoveC2SPacket move){
             ((PlayerMoveC2SPacketAccessor) move).setOnground(true);
         }
+        return false;
     }
 
     @Override

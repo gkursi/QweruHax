@@ -16,6 +16,15 @@ public class VelocityModuleManager {
         return moduleList;
     }
 
+    public static ModuleBase getModuleByName(String module) {
+        for(ModuleBase m : moduleList) {
+            if(m.getName().equalsIgnoreCase(module)){
+                return m;
+            }
+        }
+        return null;
+    }
+
     public void addModules(){
         VelocityModuleBase PositiveX = new PositiveX();
         VelocityModuleBase PositiveY = new PositiveY();

@@ -57,11 +57,7 @@ public class ClickGUI extends Screen {
             this.addDrawableChild(modBtn);
             drawableList.add(modBtn);
             yOff+=20+5;
-            xOff=0;
-            if(yOff>this.height) {
-                yOff = 2;
-                xOff+=204+20;
-            }
+            xOff=2;
         }
     }
 

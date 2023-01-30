@@ -60,12 +60,15 @@ public class Client implements ModInitializer {
         //https://github.com/Logging4J/AutoLog.CC/blob/master/src/main/java/cc/l4j/autolog/AutoLog.java
     }
 
-    public void onPacketSend(Packet<?> packet) {
+    public boolean onPacket2S(Packet<?> packet) {
+        boolean shouldCancelPacket = false;
         for(ModuleBase m : ModuleManager.getModules()){
             if(m.isToggled()) {
-                m.onPacket2S(packet);
+                boolean returnable = m.onPacket2S(packet);
+                if(returnable) shouldCancelPacket=true;
             }
         }
+        return shouldCancelPacket;
     }
     public void onPacketReceive(Packet<?> packet) {
         for(ModuleBase m : ModuleManager.getModules()){

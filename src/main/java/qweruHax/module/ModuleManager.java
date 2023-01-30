@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ModuleManager {
 
-    public ModuleBase LOBypass = new LiveOverflowBypass();
+    public ModuleBase LOBypass = new RoundCoords();
     public ModuleBase Fly = new Fly();
     public ModuleBase SurvivalSpoof = new SurvivalSpoof();
     public ModuleBase NoFall = new NoFall();

@@ -11,8 +11,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPlayNetworkHandler.class)
 public class ClientPlayNetworkHandlerMixin {
 
-    @Inject(method = "sendPacket", at = @At("HEAD"), cancellable = true)
-    private void onSendPacket(Packet<?> packet, CallbackInfo callback){
-        Client.INSTANCE.onPacketSend(packet);
+    @Inject(method="sendPacket",at=@At("HEAD"),cancellable = true)
+    private void onSendPacket(Packet< ? > p, CallbackInfo ci){
+        boolean returnable = Client.INSTANCE.onPacket2S(p);
+        if(returnable){
+            ci.cancel();
+        }
     }
 }

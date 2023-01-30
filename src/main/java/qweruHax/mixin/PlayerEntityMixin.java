@@ -7,13 +7,15 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import qweruHax.Client;
 import qweruHax.module.ModuleManager;
+import qweruHax.module.VelocityModuleBase;
+import qweruHax.module.VelocityModuleManager;
 import qweruHax.module.velocitymodules.PlayerEntityVelocityMultiplier;
 
 @Mixin(PlayerEntity.class)
 public class PlayerEntityMixin {
     @Inject(method = "getVelocityMultiplier", at = @At("HEAD"), cancellable = true)
     protected void getVelocityMultiplier(CallbackInfoReturnable<Float> cir){
-        if(PlayerEntityVelocityMultiplier.pubIsToggled()){
+        if(VelocityModuleManager.getModuleByName("VelocityMultiplier")!=null&&VelocityModuleManager.getModuleByName("VelocityMultiplier").isToggled()){
             cir.setReturnValue(5f);
         }
     }

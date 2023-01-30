@@ -43,4 +43,9 @@ public class BlockFinder extends ModuleBase {
             sendMessage("unimportant block rendered at: "+pos.getX()+", "+pos.getY()+", "+pos.getZ());
         }
     }
+
+    @Override
+    public void onEnable() {
+        mc.worldRenderer.reload();
+    }
 }

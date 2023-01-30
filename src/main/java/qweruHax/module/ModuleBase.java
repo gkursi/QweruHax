@@ -9,7 +9,7 @@ public class ModuleBase {
     public String name;
     public Category category;
     public int bind;
-    public static boolean toggled;
+    public boolean toggled;
 
     public ModuleBase(String name, int bind, Category category) {
         this.name = name;
@@ -27,7 +27,9 @@ public class ModuleBase {
 
     public void onTick(){}
 
-    public void onPacket2S(Packet<?> packet){}
+    public boolean onPacket2S(Packet<?> packet){
+        return false;
+    }
 
     public void onPacketReceive(Packet<?> packet){}
 

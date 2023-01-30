@@ -12,12 +12,6 @@ public class VelocityModuleBase extends ModuleBase{
     }
     public static int value = 10;
 
-    public static boolean pubIsToggled() {
-        return toggled;
-    }
-
-    public static boolean pubToggle = pubIsToggled();
-
     private final PlayerEntity player = mc.player;
     public void setSpeed(int speed){
         value = speed;
