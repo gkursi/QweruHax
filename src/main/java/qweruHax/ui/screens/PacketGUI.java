@@ -3,18 +3,15 @@ package qweruHax.ui.screens;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
-import qweruHax.Client;
-import qweruHax.module.ModuleBase;
-import qweruHax.module.ModuleManager;
 import qweruHax.module.VelocityModuleBase;
 import qweruHax.module.VelocityModuleManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VelocityGUI extends Screen {
-    protected VelocityGUI() {
-        super(Text.of("VelocityGUI"));
+public class PacketGUI extends Screen {
+    protected PacketGUI() {
+        super(Text.of("PacketGUI"));
     }
 
     private final List<ButtonWidget> buttonWidgets = new ArrayList<>();

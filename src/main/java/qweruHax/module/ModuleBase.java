@@ -82,7 +82,8 @@ public class ModuleBase {
     public enum Category{
         LO("LiveOverflow"),
         UTIL("Utility"),
-        VELOCITY("Velocity");
+        VELOCITY("Velocity"),
+        PACKET("Packets");
 
 
         public final String name;

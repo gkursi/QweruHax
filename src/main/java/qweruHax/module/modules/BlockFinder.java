@@ -40,7 +40,7 @@ public class BlockFinder extends ModuleBase {
         {
             sendMessage("Player block detected at: "+pos.getX()+", "+pos.getY()+", "+pos.getZ());
         }else{
-            sendMessage("unimportant block rendered at: "+pos.getX()+", "+pos.getY()+", "+pos.getZ());
+            sendMessage("Unimportant block rendered at: "+pos.getX()+", "+pos.getY()+", "+pos.getZ());
         }
     }
 
