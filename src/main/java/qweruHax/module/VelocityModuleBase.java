@@ -5,10 +5,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
+import qweruHax.util.Defs;
 
 public class VelocityModuleBase extends ModuleBase{
     public VelocityModuleBase(String name) {
-        super(name, GLFW.GLFW_KEY_HOME, Category.VELOCITY);
+        super(name, Defs.NULLKeybind, Category.VELOCITY);
     }
     public static int value = 10;
 

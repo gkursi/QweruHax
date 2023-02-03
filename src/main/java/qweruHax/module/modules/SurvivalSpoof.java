@@ -3,11 +3,12 @@ package qweruHax.module.modules;
 import qweruHax.module.ModuleBase;
 import net.minecraft.world.GameMode;
 import org.lwjgl.glfw.GLFW;
+import qweruHax.util.Defs;
 
 public class SurvivalSpoof extends ModuleBase {
 
     public SurvivalSpoof() {
-        super("SurvivalSpoof", GLFW.GLFW_KEY_Z, Category.UTIL);
+        super("SurvivalSpoof", Defs.NULLKeybind, Category.LO);
     }
 
     @Override

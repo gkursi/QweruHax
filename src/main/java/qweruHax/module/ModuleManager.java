@@ -8,7 +8,7 @@ import java.util.List;
 public class ModuleManager {
 
     public ModuleBase LOBypass = new RoundCoords();
-    public ModuleBase Fly = new Fly();
+    public ModuleBase Fly = new NoFloatKick();
     public ModuleBase SurvivalSpoof = new SurvivalSpoof();
     public ModuleBase NoFall = new NoFall();
     public ModuleBase NoWorldBorder = new NoWorldBorder();
@@ -27,6 +27,7 @@ public class ModuleManager {
         modules.add(NoWorldBorder);
         modules.add(VanillaFLy);
         modules.add(BlockFinder);
+        modules.add(new WorldGuardBypass());
     }
 
     public static List<ModuleBase> getModules(){
