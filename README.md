@@ -1,6 +1,6 @@
 # QweruHax
 
-# A simple 1.19.2 Fabric hack client.
+**A simple 1.19.2 Fabric hack client targeted at LiveOverflow's minecraft server.**
 
 **Some modules:**
 <br>AntiFlightKick - prevents you from getting kicked for flying
