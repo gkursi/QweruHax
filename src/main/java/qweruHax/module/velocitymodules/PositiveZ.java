@@ -8,8 +8,8 @@ public class PositiveZ extends VelocityModuleBase {
         super("PositiveZ");
     }
     public static int value = 10;
-    @Override
-    public void onEnable() {
+
+    public static void onEnable() {
         PlayerEntity player = mc.player;
         if(player == null) return;
         player.setVelocity(player.getVelocity().x, player.getVelocity().y, player.getVelocity().z + value);

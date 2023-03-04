@@ -44,8 +44,8 @@ public class BlockFinder extends ModuleBase {
         }
     }
 
-    @Override
-    public void onEnable() {
+
+    public static void onEnable() {
         mc.worldRenderer.reload();
     }
 }

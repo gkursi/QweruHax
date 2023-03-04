@@ -1,5 +1,6 @@
 package qweruHax.mixin;
 
+import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
 import qweruHax.Client;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.Packet;
@@ -11,11 +12,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPlayNetworkHandler.class)
 public class ClientPlayNetworkHandlerMixin {
 
+
     @Inject(method="sendPacket",at=@At("HEAD"),cancellable = true)
     private void onSendPacket(Packet< ? > p, CallbackInfo ci){
+
+        if(p instanceof ChatMessageC2SPacket cm2s){
+            cm2s.toString();
+        }
+
+
+        // code for onPacket2s
         boolean returnable = Client.INSTANCE.onPacket2S(p);
         if(returnable){
             ci.cancel();
         }
     }
+
+
 }

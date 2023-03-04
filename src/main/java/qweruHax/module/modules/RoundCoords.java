@@ -1,6 +1,9 @@
 package qweruHax.module.modules;
 
+import net.minecraft.entity.vehicle.BoatEntity;
+import net.minecraft.network.packet.c2s.play.VehicleMoveC2SPacket;
 import qweruHax.mixin.PlayerMoveC2SPacketAccessor;
+import qweruHax.mixin.VehicleMoveC2SPacketAccessor;
 import qweruHax.module.ModuleBase;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -32,6 +35,22 @@ RoundCoords extends ModuleBase {
             if(!isPacketValid) sendMessage("Floating point error, at: "+px+", "+pz);
             return !isPacketValid;
         }
+
+        if(!(mc.player.getVehicle() instanceof BoatEntity boat)){return false;}
+
+        if(p instanceof VehicleMoveC2SPacket){
+            double boatX = ((int)(((VehicleMoveC2SPacket) p).getX() * 100)) / 100.0;
+            double boatZ = ((int)(((VehicleMoveC2SPacket) p).getZ() * 100)) / 100.0;
+            ((VehicleMoveC2SPacketAccessor) p).setX(boatX);
+            ((VehicleMoveC2SPacketAccessor) p).setZ(boatZ);
+            double px = boatX*1000%10;
+            double pz = boatZ*1000%10;
+            boolean isPacketValid = px==0&&pz==0;
+            if(!isPacketValid) sendMessage("Floating point error, at: "+px+", "+pz);
+
+            return !isPacketValid;
+        }
+
         return false;
     }
 

@@ -14,6 +14,4 @@ public class MinecraftClientMixin {
     public void onTick(CallbackInfo ci){
         Client.INSTANCE.onTick();
     }
-
-
 }

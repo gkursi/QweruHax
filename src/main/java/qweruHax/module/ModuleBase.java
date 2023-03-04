@@ -4,7 +4,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.network.Packet;
 import net.minecraft.text.Text;
 
-public class ModuleBase {
+public abstract class ModuleBase {
     public static MinecraftClient mc = MinecraftClient.getInstance();
     public String name;
     public Category category;
@@ -33,7 +33,7 @@ public class ModuleBase {
 
     public void onPacketReceive(Packet<?> packet){}
 
-    public void onEnable(){}
+    public static void onEnable(){}
 
     public void onDisable(){}
 
@@ -83,7 +83,7 @@ public class ModuleBase {
         LO("LiveOverflow"),
         UTIL("Utility"),
         VELOCITY("Velocity"),
-        PACKET("Packets");
+        NORENDER("NoModuleRender");
 
 
         public final String name;

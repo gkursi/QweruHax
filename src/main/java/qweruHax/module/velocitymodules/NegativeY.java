@@ -9,8 +9,8 @@ public class NegativeY extends VelocityModuleBase {
     }
     public static int value = 10;
 
-    @Override
-    public void onEnable() {
+
+    public static void onEnable() {
         PlayerEntity player = mc.player;
         if(player == null) return;
         player.setVelocity(player.getVelocity().x, player.getVelocity().y-value, player.getVelocity().z);
