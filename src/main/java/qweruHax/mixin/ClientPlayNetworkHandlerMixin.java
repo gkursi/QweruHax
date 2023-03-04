@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import qweruHax.module.modules.ChatHandler;
 
 @Mixin(ClientPlayNetworkHandler.class)
 public class ClientPlayNetworkHandlerMixin {
@@ -17,7 +18,7 @@ public class ClientPlayNetworkHandlerMixin {
     private void onSendPacket(Packet< ? > p, CallbackInfo ci){
 
         if(p instanceof ChatMessageC2SPacket cm2s){
-            cm2s.toString();
+            if(ChatHandler.handle(cm2s.chatMessage())) ci.cancel();
         }
 
 
