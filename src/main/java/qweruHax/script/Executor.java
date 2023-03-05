@@ -1,2 +1,4 @@
-package qweruHax.script;public class Executor {
+package qweruHax.script;
+
+public class Executor {
 }

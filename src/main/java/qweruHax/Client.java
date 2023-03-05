@@ -9,6 +9,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.network.Packet;
 import org.lwjgl.glfw.GLFW;
+import qweruHax.util.Defs;
 
 public class Client implements ModInitializer {
 
@@ -61,6 +62,7 @@ public class Client implements ModInitializer {
     }
 
     public boolean onPacket2S(Packet<?> packet) {
+        if(ModuleManager.getModuleByName("PacketLogger")!=null||ModuleManager.getModuleByName("PacketLogger").isToggled()) Defs.sendMessage("(C -> S) "+packet.toString());
         boolean shouldCancelPacket = false;
         for(ModuleBase m : ModuleManager.getModules()){
             if(m.isToggled()) {
@@ -71,6 +73,7 @@ public class Client implements ModInitializer {
         return shouldCancelPacket;
     }
     public void onPacketReceive(Packet<?> packet) {
+        if(ModuleManager.getModuleByName("PacketLogger")!=null||ModuleManager.getModuleByName("PacketLogger").isToggled()) Defs.sendMessage("(S -> C) "+packet.toString());
         for(ModuleBase m : ModuleManager.getModules()){
             if(m.isToggled()) {
                 m.onPacketReceive(packet);

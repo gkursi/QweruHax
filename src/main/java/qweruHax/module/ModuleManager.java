@@ -28,6 +28,7 @@ public class ModuleManager {
         modules.add(VanillaFLy);
         modules.add(BlockFinder);
         modules.add(new WorldGuardBypass());
+        modules.add(new PacketLogger());
     }
 
     public static List<ModuleBase> getModules(){

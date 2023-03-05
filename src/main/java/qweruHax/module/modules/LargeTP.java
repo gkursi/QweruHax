@@ -17,6 +17,7 @@ public class LargeTP extends ModuleBase {
         double pz = mc.player.getPos().z;
         for(int i = 0; i<8; i++){
             Network.PacketHelper.sendMove(px, py, pz, mc.player.isOnGround());
+            sendMessage("(C -> S)");
         }
         Network.PacketHelper.sendMove(x, y, z, mc.player.isOnGround());
         sendMessage("Current pos: "+px+", "+py+", "+pz+", target pos: "+x+", "+y+", "+z);

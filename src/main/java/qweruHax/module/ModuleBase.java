@@ -76,7 +76,8 @@ public abstract class ModuleBase {
     }
     public static void sendMessage(String msg){
         if (MinecraftClient.getInstance().player != null) {
-            MinecraftClient.getInstance().player.sendMessage(Text.of(msg)); // from auto log.cc as well cos yes
+
+            MinecraftClient.getInstance().player.sendMessage(Text.of("§d[QWERUHAX]§f "+msg));
         }
     }
     public enum Category{

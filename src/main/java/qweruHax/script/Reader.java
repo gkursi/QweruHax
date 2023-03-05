@@ -1,2 +1,4 @@
-package qweruHax.script;public class Reader {
+package qweruHax.script;
+
+public class Reader {
 }
